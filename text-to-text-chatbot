@@ -2,7 +2,7 @@ import gradio as gr
 import os
 import openai
 
-openai.api_key = "insert-key-here"
+openai.api_key = "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"
 
 start_sequence = "\nAI:"
 restart_sequence = "\nHuman: "
@@ -39,12 +39,14 @@ block = gr.Blocks()
 
 
 with block:
-    gr.Markdown("""<title>BJ</title><h1><center>Let's Chat!</center></h1>
+    gr.Markdown("""<title>BJ</title>
+    """)
+    gr.Markdown("""<h1><center>Let's Chat!</center></h1>
     """)
     chatbot = gr.Chatbot()
     message = gr.Textbox(placeholder=prompt)
     state = gr.State()
-    submit = gr.Button("SEND")
+    submit = gr.Button("ENTER")
     submit.click(chat, inputs=[message, state], outputs=[chatbot, state])
 
 block.launch(debug = True, share = True)
